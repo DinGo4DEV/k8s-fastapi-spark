@@ -1,0 +1,20 @@
+# comment
+*__pycache__*
+*/__pycache__
+*.pyc
+Jenkinsfile
+*HEAD*
+branches
+
+hooks/*
+hooks
+
+config
+refs/*
+refs
+
+*dev*
+.pattern
+Dockerfile
+.pdm-build/*
+.dockerignore
