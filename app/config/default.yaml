@@ -1,0 +1,32 @@
+app:
+  name: k8s-fastapi-spark
+  root-path: ""
+  
+
+
+logging:
+  path: logs/root.log
+
+prometheus:
+  prefix: fastapi
+  skip_paths: []
+
+
+arangodb:
+  enable: false
+  url: http://127.0.0.1:8529/
+  db: _system
+  username: root
+  password: ""
+
+oracle:
+  enable: false
+  url: 
+
+
+redis:
+  enable: false
+  host: 127.0.0.1
+  port: 6379
+  database: 0
+  cache_prefix_key: "fastapi-spark:"

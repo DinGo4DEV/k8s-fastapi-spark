@@ -1,0 +1,42 @@
+
+[project]
+name = "k8s-fastapi-spark"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "stanleylaw", email = "stanleylaw@hket.com"},
+]
+dependencies = [
+    "fastapi>=0.103.1",
+    "pandas>=2.1.0",
+    "pyspark>=3.4.1",
+    "delta-spark>=2.4.0",
+    "pydantic>=2.3.0",
+    "dask>=2023.9.1",
+    "redis>=5.0.0",
+    "python-arango>=7.6.2",
+    "oracledb>=1.4.1",
+    "PyYaml>=6.0.1",
+    "boto3>=1.28.46",
+    "ujson>=5.8.0",
+    "pytz>=2023.3.post1",
+    "starlette-exporter>=0.16.0",
+    "loguru>=0.7.2",
+    "python-multipart>=0.0.6",
+    "uvicorn>=0.23.2",
+    "pyhumps>=3.8.0",
+    "anyio>=3.7.1",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.scripts.start_server]
+cmd = "uvicorn app.main:app"
+
+[tool.pdm.scripts.dev]
+cmd = "uvicorn app.main:app --reload"
