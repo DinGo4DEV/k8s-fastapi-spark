@@ -6,7 +6,8 @@ ARG HOST="docker.io"
 ARG WORKDIR=/src
 
 FROM --platform=linux/amd64 $HOST/$ARTIFACT:$VERSION 
-
+EXPOSE 8080
+EXPOSE 4040
 
 USER 0
 
