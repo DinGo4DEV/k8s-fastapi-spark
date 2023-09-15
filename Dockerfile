@@ -23,12 +23,13 @@ COPY pyproject.toml pdm.lock $WORKDIR/
 
 RUN mkdir __pypackages__ && pdm install --prod --no-lock --no-editable
 
-ENV PATH="$PATH:/__pypackages__/3.11/Scripts"
+ENV PATH="$PATH:/__pypackages__/3.11/Scripts:/.venv/Scripts"
 
 COPY . .
 RUN chgrp -R 0 $WORKDIR && chmod -R g=u $WORKDIR
 USER 1001
 
 ENV root_path="/"
+ENV config='$WORKDIR/app/config/default.yaml'
 
 CMD ["sh","-c","pdm run start_server --host 0.0.0.0 --port 8080 --workers 2 --root-path $root_path"]
